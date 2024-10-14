@@ -1,0 +1,7 @@
+(set-option :produce-models true)
+(declare-const p Bool)
+(declare-const r Bool)
+(declare-const q Bool)
+(assert (and (or q (not r)) (or (not p) r) (or (not q) r p) (or p q (not q)) (or (not r) q)))
+(check-sat)
+(get-model)
